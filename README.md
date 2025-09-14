@@ -10,6 +10,8 @@ Men styla i första hand efter kortens positionering och mellanrum, så som `pad
 
 ## 🦩 Färger från prototypen
 
+Testa att skapa en separat stylesheet med CSS-variabler och importera den i `style.css`
+
 ```css
 :root {
   --dark-red: #fe8080;
