@@ -1,20 +1,27 @@
-:root {
-  --dark-red: #fe8080;
-  --gradient-from: #fff3f3;
-  --gradient-to: #ffebeb;
-}
-
 body {
     background-color: rgb(247, 226, 218);
     display: flex;
 }
 
-img {
+img:not(#sleepy) {
     width: 240px;
     height: 250px;
     object-fit: cover;
     align-self: center;
     position: absolute;
+}
+
+img::after {
+    content: attr(error);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    top: 110px;
 }
 
 .imageCard {
@@ -24,14 +31,6 @@ img {
     width: 240px;
     height: 250px;
     background-color: lightgray;
-    
-    .missingText {
-        position: absolute;
-        align-self: center;
-        color: rgb(0, 0, 0);
-        opacity: 1;
-        font-weight: bolder;
-    }
 }
 
 .container {
@@ -43,7 +42,7 @@ img {
 h2 {
     align-self: flex-start;
     font-size: 15px;
-    color: rgb(251, 129, 107);
+    color: #fe8080;
     font-weight: bold;
     margin-right: -300px;
     width: 500px;
@@ -57,18 +56,19 @@ h1, h2, h3, h4 {
 .card {
     background-color: white;
     padding: 15px 15px;
-    margin: 5px;
+    margin: 15px;
     margin-bottom: 10px;
     width: 240px;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
     box-shadow: 0px 0px 5px rgba(109, 109, 109, 0.5);
     transition: .5s ease;
+    position: relative;
 
     h3 {
-        background-color: rgb(251, 129, 107);
+        background-color: #fe8080;
         color: white;
         padding: 7px 10px;
         margin: 10px 0px 5px 0px;
@@ -96,21 +96,20 @@ h1, h2, h3, h4 {
 .card-container-start {
     display: grid;
     justify-content: center;
-    .smiley {
-        text-align: center;
-        font-size: 40px;
-        opacity: 15%;
-    }
-
 }
 
 .card:hover {
-    width: 250px;
-    padding: 25px 25px;
+    transform: scale(1.1);
+    border-radius: 0;
+    box-shadow: 0px 0px 20px #fe8080b0;
     img {
         opacity: 50%;
     }
-    .missingText {
-        opacity: 0;
-    }
+}
+
+#sleepy {
+    width: 100px;
+    height: 100px;
+    justify-self: center;
+    padding: 50px;
 }
