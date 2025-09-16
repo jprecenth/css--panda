@@ -11,6 +11,17 @@ img:not(#sleepy) {
     position: absolute;
 }
 
+
+.imageCard {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    width: 240px;
+    height: 250px;
+    background-color: lightgray;
+}
+
+
 img::after {
     content: attr(error);
     font-size: 15px;
@@ -22,15 +33,6 @@ img::after {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
     top: 110px;
-}
-
-.imageCard {
-    position: relative;
-    justify-content: center;
-    display: flex;
-    width: 240px;
-    height: 250px;
-    background-color: lightgray;
 }
 
 .container {
@@ -56,7 +58,7 @@ h1, h2, h3, h4 {
 .card {
     background-color: white;
     padding: 15px 15px;
-    margin: 15px;
+    margin: 35px 15px;
     margin-bottom: 10px;
     width: 240px;
     border-radius: 20px;
@@ -101,7 +103,7 @@ h1, h2, h3, h4 {
 .card:hover {
     transform: scale(1.1);
     border-radius: 0;
-    box-shadow: 0px 0px 20px #fe8080b0;
+    box-shadow: 0px 0px 20px #5b5b5bb0;
     img {
         opacity: 50%;
     }
@@ -112,4 +114,11 @@ h1, h2, h3, h4 {
     height: 100px;
     justify-self: center;
     padding: 50px;
+    margin-top: 20px;
+    transition: 2s ease;
+
+}
+
+#sleepy:hover {
+    transform: rotateY(180deg);
 }
